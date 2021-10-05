@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	    <title>CryptoTrade</title>
+	    
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		 
+	    <!-- Bootstrap CSS CDN -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+		
+		<style>
+
+
+
+/* Modal Content/Box */
+.modal-content {
+  color: black;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: auto; /* Could be more or less, depending on screen size */
+  height: auto;
+}
+
+/* The Close Button */
+.close {
+  background-color: red;
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  padding:16px;
+  width:24px;
+  padding-top: 0px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+.modalrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+		</style>
+		
+		
+		<script src="scripts.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css?version=0">	
+
+		
+	</head>
+	<body>
+
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+		<div class="wrapper">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#" onclick="return confirm('CryptoTrade is a online trading website that allows YOU to trade by buying and selling tokens that reflect volatility in the cryptocurrency market.')">CryproTrade</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item active" style="display: inline-block">
+        <a class="nav-link" href="#" )">Contact: Zack@email.com</a>
+      </li>
+      
+    </ul>
+	<span class="navbar-text">
+      Admin
+    </span>
+    <span class="navbar-text">
+      Username
+    </span>
+  </div>
+</nav>
+			
+			<div id="createComp" class="modal">
+								<div class="modal-dialog modal-lg">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h2 class="model-title">Register/Login</h2>
+											<button type="button" class="close" data-dismiss="modal">&times;</button> 
+										</div>
+										<div class="modal-body">
+										<form >
+										
+										<div class="modalrow">
+											<div class="col-25" >
+											<label for="desc">Username: </label>
+											</div>
+											<div class="col-75">
+											<input type="text" ></input>
+											</div>
+											</div>
+											<div class="modalrow">
+											<div class="col-25">
+											<label for="desc">Username: </label>
+											</div>
+											<div class="col-75">
+											<input type="text"></input>
+											</div>
+											</div>
+											
+											<input type='hidden' name='table' value='competitions'></input>
+										</div>
+										<div class="modal-footer">
+											<div class="btn-group">
+											<button type="submit" class="btn btn-primary"  >register/login</button>
+											<button type="button" class="btn btn-danger" name="cancel" data-dismiss="modal">cancel</button>
+											</div>
+										</div>
+										</form>
+										</div>
+									</div>
+								</div>
+			
+			<div class="container-fluid">
+				<div class="row myrow" >
+					<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mycol" align="center">
+						<div class="tileLeft tradingview_2b8a8" align="left">
+							<div class="mb-1">TICKERS 
+								<button class="btn btn-success" style="padding: 1px; font-size: 0.7em;" id="toggle" align='right' onclick="toggleChart();">Lock Chart</button>
+							</div>
+								<ul class="nav nav-pills nav-stacked">
+									<li class='nav-item' style="width: 96%; padding-right: 10%;">
+										<div class='row tokenHeader justify-content-left align-items-between mb-1'>
+											<div class='col-3' align='left'>
+												<b>SYMBOL</b>
+											</div>
+											<div class='col-6' align='right'>
+												<b>LAST</b>
+											</div>
+											<div class='col-3' align='right'>
+												<b>24H</b>
+											</div>
+										</div>
+									</li>
+								</ul>
+							<ul class="nav nav-pills nav-stacked tokenList">
+								<div id="streams" class="order">
+								</div>
+							</ul>
+							<div class="mt-3" id='details'>
+								<div id="symbol"></div>
+								<h1 style="font-size: 1.5em;"><span id="price"></span><span style="font-size: 0.75em;">USD</span>
+									<span style="font-size: 0.75em;" id="change"></span>
+								</h1>
+								<div style="font-size: 0.8em;">24h Range</div>
+								<span id="low"></span>
+								<span id="high"></span>
+								<span id="load" class="spinner-border text-primary spinner-border-sm" role="status">
+									 	<span class="sr-only">Loading...</span>
+								</span>
+								<div style="font-size: 0.8em;">24h Volume</div>
+								<span id="volume"></span>
+								<span id="load2" class="spinner-border text-primary spinner-border-sm" role="status">
+									 	<span class="sr-only">Loading...</span>
+								</span>
+							</div>
+							<div>
+								<form action='#' id="orderForm">
+									<input type="hidden" id="order" value="order">
+									<input type="hidden" id="symbol" value="BTC">
+									<div style="position: relative; bottom: 0px;">
+										<div class="input-group mb-3 mt-3">
+											<button type="button" class="btn btn-secondary btnbar" id="q" style="width: 18%; height: 25px; padding: 0;">25%</button>
+											<button type="button" class="btn btn-secondary btnbar" id="h" style="width: 18%; height: 25px; padding: 0;">50%</button>
+											<button type="button" class="btn btn-secondary btnbar" id="hq" style="width: 18%; height: 25px; padding: 0;">75%</button>
+											<button type="button" class="btn btn-secondary btnbar" id="f" style="width: 18%; height: 25px; padding: 0;">100%</button>
+											<button type="button" class="btn btn btn-success btnbar" id="r" onclick="toggleOrder()" style="width: 28%; height: 25px; padding: 0;">Increase</button>
+							  				<input autocomplete="off" class="form-control" aria-label="AMOUNT" style="text-align: right;" aria-describedby="basic-addon2" id="amount">
+							  				<div class="input-group-append">
+							    				<span class="input-group-text" id="amountsymbol">BTC</span>
+							  				</div>
+										</div>
+								  		<div class="form-group" style="padding: 0">
+								  			<div class="row">
+								  				<div class="col-6" style="padding-right: 5px;">
+								  					<button type="submit" class="btn btn-success" id="buy" name="buy" value="buy">
+								  						Buy
+								  					</button>
+								  				</div>
+								  				<div class="col-6" style="padding-left: 5px;">
+								  					<button type="submit" class="btn btn-danger" id="sell" name="sell" value="sell">
+								  						Sell
+								  					</button>
+								  				</div>				  			
+									  		</div>
+								  		</div>
+								  	</div>
+								  	<div style="display: none; font-size: 0.8em;" class="alert alert-danger" role="alert" id="error">
+									</div>
+									<div style="display: none; font-size: 0.8em;" class="alert alert-success" role="alert" id="success">
+									</div>
+									<div> Total: 
+										<span id="value">
+											
+										</span>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-9 col-md-0 col-sm-12 col-xs-12 mycol">
+						<div class="tradingview_2b8a8 tileRight" id="tradingview_2b8a8">
+							<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+							<script type="text/javascript">
+								makeChart("BTCUSDT");
+								function makeChart(s){
+									new TradingView.widget({
+										"autosize": true,
+										"symbol": "BINANCE:" + s,
+										"interval": "3H",
+										"timezone": "Etc/UTC",
+										"theme": "Dark",
+										"style": "1",
+										"locale": "en",
+										"toolbar_bg": "#f1f3f6",
+										"enable_publishing": false,
+										"withdateranges": true,
+										"hide_side_toolbar": false,
+										"allow_symbol_change": true,
+
+										"studies": [
+										  "RSI@tv-basicstudies"
+										],
+										"showpopup_button": true,
+										"popup_width": 1000,
+										"popup_height": 650,
+										"container_id": "tradingview_2b8a8"
+									});
+								}
+								
+
+    $(window).on('load', function() {
+        $('#createComp').modal('show');
+    });
+							</script>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center myrow">
+					<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mycol">
+						<div class="balance">
+							<div class="mb-1">ACCOUNT INFORMATION</div>
+							<div style="font-size: 0.8em;">
+								Account Value: <span id="balance">-.--</span> USD <br>
+								Combined P/L: <span id="openPl"></span><br>
+								Buying Power: <span id="margin">-.--</span> USD <br>
+							</div>
+							<div style="display: none; font-size: 0.8em;" class="alert alert-danger mt-2 mb-2" role="alert" id="liquidation">
+								WARNING: Margin Call
+							</div>
+							<div style="display: none; font-size: 0.8em;" class="alert alert-danger mt-2 mb-2" role="alert" id="competition">
+								All trading is currently disabled. Make sure to <a href="leaderboard_test.php">register</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 mycol">
+						<div class="tileRight">
+							<div class="mb-1">POSITIONS</div>
+							<form action="#">
+								<table>
+									<thead>
+										<th style='width: 15%;'>SYMBOL</th>
+										<th>AMOUNT</th>
+										<th>AVGPRICE</th>
+										<th>P/L</th>
+										<th style="width: 50px;">CLOSE</th>
+									</thead>
+									<tbody id="positionTable">
+									</tbody>
+								</table>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>

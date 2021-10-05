@@ -1,0 +1,215 @@
+.wrapper
+{
+  background-color: #0c0d12;
+  border-radius: 3px;
+}
+.mycol
+{
+  padding: 4px;
+}
+.btnbar
+{
+  padding: 0;
+  font-size: 0.8em;
+}
+.balance
+{
+  padding: 10px;
+  background-color: #141823;
+}
+.tileLeft
+{
+  max-width: 600px;
+  padding: 10px;
+  background-color: #141823;
+}
+.tileRight
+{
+  padding: 10px;
+  height: 100%;
+  background-color: #141823;
+}
+.tokenList {
+    height:300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.tokenElement
+{
+  padding: 0;
+  padding-left: 5px;
+  font-size: 0.80em;
+  height: 30px;
+  width: 100%;
+  border-radius: 3px;
+}
+.order
+{
+  width: 96%;
+}
+.tradingview_2b8a8
+{
+  height: 725px;
+}
+.positions
+{
+  padding: 10px;
+  background-color: #141823;
+}
+.tokenHeader
+{
+  font-size: 0.7em;
+}
+.mynav
+{
+  color: #000000;
+}
+table {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+thead {
+    flex: 0 0 auto;
+}
+
+tbody {
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+tr {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    font-size: 0.8em;
+}
+body
+{
+  border-radius: 30px;
+  font-family: Verdana;
+  background-color: #0c0d12;
+  color: white;
+}
+button
+{
+  width: 100%;
+}
+.tokenList::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+.tokenList::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(200,200,200,1);
+    border-radius: 10px;
+}
+
+.tokenList::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color:#fff;
+    -webkit-box-shadow: inset 0 0 3px rgba(90,90,90,0.7);
+}
+.tokenElement:hover
+{
+  background: #2f3851;
+  color: white;
+}
+#toggle
+{
+  width: 80px; 
+  position: absolute; 
+  right: 15px;
+  font-size: 0.5em;
+}
+a:nth-child(even) {
+  background: #1c2231;
+}
+* {box-sizing: border-box;}
+
+
+#center {
+  
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+    
+  margin: auto;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* The Modal (background) */
+.modal {
+  
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  color: black;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  background-color: red;
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  padding:16px;
+  width:24px;
+  padding-top: 0px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+.modalrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
